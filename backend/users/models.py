@@ -23,6 +23,52 @@ class User(AbstractUser):
         blank=True,
         max_length=255,
     )
+    first_name = models.TextField(
+        null=True,
+        blank=True,
+    )
+    last_name = models.TextField(
+        null=True,
+        blank=True,
+    )
+    password = models.TextField(
+        null=True,
+        blank=True,
+    )
+    email = models.EmailField(
+        max_length=254,
+        null=True,
+        blank=True,
+    )
+    dob = models.DateField(
+        null=True,
+        blank=True,
+    )
+    location = models.TextField(
+        null=True,
+        blank=True,
+    )
+    bio = models.TextField(
+        null=True,
+        blank=True,
+    )
+    website = models.URLField(
+        null=True,
+        blank=True,
+    )
+    photo = models.URLField(
+        null=True,
+        blank=True,
+    )
+    pilot_standing = models.TextField(
+        null=True,
+        blank=True,
+    )
+    hire_date = models.DateField(
+        auto_now_add=True,
+        null=True,
+        blank=True,
+    )
 
     def get_absolute_url(self):
         return reverse("users:detail", kwargs={"username": self.username})
